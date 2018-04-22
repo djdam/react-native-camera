@@ -123,7 +123,7 @@ public class ResolveTakenPictureAsyncTask extends AsyncTask<Void, Void, Writable
             String filePath = writeStreamToFile(imageStream);
             File imageFile = new File(filePath);
             String fileUri = Uri.fromFile(imageFile).toString();
-            response.putString("uri", fileUri);
+            response.putString("uri", filePath);
 
             // Write base64-encoded image to the response if requested
             if (mOptions.hasKey("base64") && mOptions.getBoolean("base64")) {
